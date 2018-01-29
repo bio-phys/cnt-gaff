@@ -1,0 +1,2 @@
+This project contains buildCstruct 1.2 to build atomistic structures of carbon nanotubes (CNTs) with the possibility to add three different functional groups to the rim (OH, COOH, COO-). Partial charges, if desired, are parameterized for use with the Amber force field. Also included is acpype.py to assign generalized Amber (GAFF) parameters to the CNTs as well as two scripts to invoke them both in a systematic way and a folder with ready-to-use examples.
+
