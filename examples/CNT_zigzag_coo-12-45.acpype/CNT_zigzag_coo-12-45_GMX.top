@@ -1,0 +1,15 @@
+; CNT_zigzag_coo-12-45_GMX.top created by acpype (Rev: 7828) on Sat Mar  5 11:36:16 2016
+
+[ defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+1               2               yes             0.5     0.8333
+
+; Include CNT_zigzag_coo-12-45_GMX.itp topology
+#include "CNT_zigzag_coo-12-45_GMX.itp"
+
+[ system ]
+ CNT_zigzag_coo-12-45
+
+[ molecules ]
+; Compound        nmols
+ CNT_zigzag_coo-12-45 1     

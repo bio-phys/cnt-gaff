@@ -1,0 +1,15 @@
+; CNT_arm_oh-08-40_GMX.top created by acpype (Rev: 7828) on Fri Mar  4 23:47:34 2016
+
+[ defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+1               2               yes             0.5     0.8333
+
+; Include CNT_arm_oh-08-40_GMX.itp topology
+#include "CNT_arm_oh-08-40_GMX.itp"
+
+[ system ]
+ CNT_arm_oh-08-40
+
+[ molecules ]
+; Compound        nmols
+ CNT_arm_oh-08-40 1     

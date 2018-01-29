@@ -1,0 +1,5 @@
+; to test
+; grompp -f md.mdp -c em.gro -p CNT_arm_cooh-08-40_GMX.top -o md.tpr
+; mdrun -v -deffnm md
+integrator               = md
+nsteps                   = 1000

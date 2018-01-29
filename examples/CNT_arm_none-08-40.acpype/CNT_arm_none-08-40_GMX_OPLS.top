@@ -1,0 +1,14 @@
+; CNT_arm_none-08-40_GMX_OPLS.top created by acpype (Rev: 7828) on Fri Mar  4 23:14:44 2016
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include CNT_arm_none-08-40_GMX.itp topology
+#include "CNT_arm_none-08-40_GMX.itp"
+
+[ system ]
+ CNT_arm_none-08-40
+
+[ molecules ]
+; Compound        nmols
+ CNT_arm_none-08-40 1     

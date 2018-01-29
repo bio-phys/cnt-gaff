@@ -1,0 +1,14 @@
+; CNT_zigzag_oh-12-50_GMX_OPLS.top created by acpype (Rev: 7828) on Fri Aug 12 01:25:59 2016
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include CNT_zigzag_oh-12-50_GMX.itp topology
+#include "CNT_zigzag_oh-12-50_GMX.itp"
+
+[ system ]
+ CNT_zigzag_oh-12-50
+
+[ molecules ]
+; Compound        nmols
+ CNT_zigzag_oh-12-50 1     

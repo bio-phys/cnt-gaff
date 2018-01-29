@@ -1,0 +1,1178 @@
+log started: Sat Mar  5 03:08:35 2016
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff12SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #    Uses frcmod.ff12SB for proteins; ff99bsc0 for DNA; ff99bsc0_chiOL3 for RNA
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>> # glycam
+>> 	{ "OG"  "O" "sp3" }
+>> 	{ "OL"  "O" "sp3" }
+>> 	{ "AC"  "C" "sp3" }
+>> 	{ "EC"  "C" "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> parm10 = loadamberparams parm10.dat
+Loading parameters: /home/mavoegel/amber14/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+(UNKNOWN ATOM TYPE: Zn)
+(UNKNOWN ATOM TYPE: EP)
+>> frcmod12SB = loadamberparams frcmod.ff12SB
+Loading parameters: /home/mavoegel/amber14/dat/leap/parm/frcmod.ff12SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff12SB protein backbone and sidechain parameters
+>> #
+>> #	Load main chain and terminating amino acid libraries, nucleic acids
+>> #
+>> loadOff amino12.lib
+Loading library: /home/mavoegel/amber14/dat/leap/lib/amino12.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/mavoegel/amber14/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/mavoegel/amber14/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> loadOff nucleic12.lib
+Loading library: /home/mavoegel/amber14/dat/leap/lib/nucleic12.lib
+Loading: A
+Loading: A3
+Loading: A5
+Loading: AN
+Loading: C
+Loading: C3
+Loading: C5
+Loading: CN
+Loading: DA
+Loading: DA3
+Loading: DA5
+Loading: DAN
+Loading: DC
+Loading: DC3
+Loading: DC5
+Loading: DCN
+Loading: DG
+Loading: DG3
+Loading: DG5
+Loading: DGN
+Loading: DT
+Loading: DT3
+Loading: DT5
+Loading: DTN
+Loading: G
+Loading: G3
+Loading: G5
+Loading: GN
+Loading: OHE
+Loading: U
+Loading: U3
+Loading: U5
+Loading: UN
+>> #
+>> #       Load water and ions
+>> # 
+>> loadOff atomic_ions.lib
+Loading library: /home/mavoegel/amber14/dat/leap/lib/atomic_ions.lib
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CL
+Loading: CO
+Loading: CS
+Loading: CU
+Loading: Cl-
+Loading: Cr
+Loading: EU
+Loading: F
+Loading: FE2
+Loading: HG
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LI
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NI
+Loading: Na+
+Loading: PB
+Loading: PD
+Loading: PT
+Loading: RB
+Loading: Ra
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: V2+
+Loading: YB2
+Loading: ZN
+>> loadOff solvents.lib
+Loading library: /home/mavoegel/amber14/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: OPC
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids and nucleic acids
+>> #     (note: no NHYP!  use neutral form for now)
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "HYP"  } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>>   { 0 "G" "G5"  } { 1 "G" "G3"  } 
+>>   { 0 "A" "A5"  } { 1 "A" "A3"  } 
+>>   { 0 "C" "C5"  } { 1 "C" "C3"  } 
+>>   { 0 "U" "U5"  } { 1 "U" "U3"  } 
+>>   { 0 "DG" "DG5"  } { 1 "DG" "DG3"  }  
+>>   { 0 "DA" "DA5"  } { 1 "DA" "DA3"  }  
+>>   { 0 "DC" "DC5"  } { 1 "DC" "DC3"  }  
+>>   { 0 "DT" "DT5"  } { 1 "DT" "DT3"  }  
+>> #  some old Amber residue names for RNA:
+>>   { 0  "RA5" "A5" } { 1 "RA3" "A3"} {"RA" "A" }
+>>   { 0  "RC5" "C5" } { 1 "RC3" "C3"} {"RC" "C" }
+>>   { 0  "RG5" "G5" } { 1 "RG3" "G3"} {"RG" "G" }
+>>   { 0  "RU5" "U5" } { 1 "RU3" "U3"} {"RU" "U" }
+>> #  some really old Amber residue names, assuming DNA:
+>>   { 0 "GUA" "DG5"  } { 1 "GUA" "DG3"  } { "GUA" "DG" }
+>>   { 0 "ADE" "DA5"  } { 1 "ADE" "DA3"  } { "ADE" "DA" }
+>>   { 0 "CYT" "DC5"  } { 1 "CYT" "DC3"  } { "CYT" "DC" }
+>>   { 0 "THY" "DT5"  } { 1 "THY" "DT3"  } { "THY" "DT" }
+>> #  uncomment out the following if you have this old style RNA files:
+>> # { 0 "GUA" "G5"  } { 1 "GUA" "G3"  } { "GUA" "G" }
+>> # { 0 "ADE" "A5"  } { 1 "ADE" "A3"  } { "ADE" "A" }
+>> # { 0 "CYT" "C5"  } { 1 "CYT" "C3"  } { "CYT" "C" }
+>> # { 0 "THY" "T5"  } { 1 "THY" "T3"  } { "THY" "T" }
+>> 
+>> }
+>> 
+>> #  try to be good about reading in really old atom names as well:
+>> addPdbAtomMap {
+>>   { "O5*" "O5'" }
+>>   { "C5*" "C5'" }
+>>   { "C4*" "C4'" }
+>>   { "O4*" "O4'" }
+>>   { "C3*" "C3'" }
+>>   { "O3*" "O3'" }
+>>   { "C2*" "C2'" }
+>>   { "O2*" "O2'" }
+>>   { "C1*" "C1'" }
+>>   { "C5M" "C7"  }
+>>   { "H1*" "H1'" }
+>>   { "H2*1" "H2'" }
+>>   { "H2*2" "H2''" }
+>>   { "HO*2" "HO2'" }
+>>   { "H2'1" "H2'" }
+>>   { "H2'2" "H2''" }
+>>   { "H3*" "H3'" }
+>>   { "H4*" "H4'" }
+>>   { "H5*1" "H5'" }
+>>   { "H5*2" "H5''" }
+>>   { "H5'1" "H5'" }
+>>   { "H5'2" "H5''" }
+>>   { "HO'2" "HO2'" }
+>>   { "H5T"  "HO5'" }
+>>   { "H3T"  "HO3'" }
+>>   { "O1'" "O4'" }
+>>   { "OA"  "OP1" }
+>>   { "OB"  "OP2" }
+>>   { "O1P" "OP1" }
+>>   { "O2P" "OP2" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+> source leaprc.gaff
+----- Source: /home/mavoegel/amber14/dat/leap/cmd/leaprc.gaff
+----- Source of /home/mavoegel/amber14/dat/leap/cmd/leaprc.gaff done
+>> logFile leap.log
+log started: Sat Mar  5 03:08:35 2016
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the general Amber Force field.
+>> #       This file is mostly for use with Antechamber
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "h1"  "H" "sp3" }
+>> 	{ "h2"  "H" "sp3" }
+>> 	{ "h3"  "H" "sp3" }
+>> 	{ "h4"  "H" "sp3" }
+>> 	{ "h5"  "H" "sp3" }
+>> 	{ "ha"  "H" "sp3" }
+>> 	{ "hc"  "H" "sp3" }
+>> 	{ "hn"  "H" "sp3" }
+>> 	{ "ho"  "H" "sp3" }
+>> 	{ "hp"  "H" "sp3" }
+>> 	{ "hs"  "H" "sp3" }
+>> 	{ "hw"  "H" "sp3" }
+>> 	{ "hx"  "H" "sp3" }
+>> 	{ "o"  "O" "sp2" }
+>> 	{ "o2"  "O" "sp2" }
+>> 	{ "oh"  "O" "sp3" }
+>> 	{ "os"  "O" "sp3" }
+>> 	{ "ow"  "O" "sp3" }
+>> 	{ "c"  "C" "sp2" }
+>> 	{ "c1"  "C" "sp2" }
+>> 	{ "c2"  "C" "sp2" }
+>> 	{ "c3"  "C" "sp3" }
+>> 	{ "ca"  "C" "sp2" }
+>> 	{ "cc"  "C" "sp2" }
+>> 	{ "cd"  "C" "sp2" }
+>> 	{ "ce"  "C" "sp2" }
+>> 	{ "cf"  "C" "sp2" }
+>> 	{ "cg"  "C" "sp2" }
+>> 	{ "ch"  "C" "sp2" }
+>> 	{ "cp"  "C" "sp2" }
+>> 	{ "cq"  "C" "sp2" }
+>> 	{ "cu"  "C" "sp2" }
+>> 	{ "cv"  "C" "sp2" }
+>> 	{ "cx"  "C" "sp2" }
+>> 	{ "cy"  "C" "sp2" }
+>> 	{ "cz"  "C" "sp2" }
+>> 	{ "n"   "N" "sp2" }
+>> 	{ "n1"  "N" "sp2" }
+>> 	{ "n2"  "N" "sp2" }
+>> 	{ "n3"  "N" "sp3" }
+>> 	{ "n4"  "N" "sp3" }
+>> 	{ "na"  "N" "sp2" }
+>> 	{ "nb"  "N" "sp2" }
+>> 	{ "nc"  "N" "sp2" }
+>> 	{ "nd"  "N" "sp2" }
+>> 	{ "ne"  "N" "sp2" }
+>> 	{ "nf"  "N" "sp2" }
+>> 	{ "nh"  "N" "sp2" }
+>> 	{ "no"  "N" "sp2" }
+>> 	{ "s"   "S" "sp2" }
+>> 	{ "s2"   "S" "sp2" }
+>> 	{ "s3"   "S" "sp3" }
+>> 	{ "s4"   "S" "sp3" }
+>> 	{ "s6"   "S" "sp3" }
+>> 	{ "sh"   "S" "sp3" }
+>> 	{ "ss"   "S" "sp3" }
+>> 	{ "sx"   "S" "sp3" }
+>> 	{ "sy"   "S" "sp3" }
+>> 	{ "p2"   "P" "sp2" }
+>> 	{ "p3"   "P" "sp3" }
+>> 	{ "p4"   "P" "sp3" }
+>> 	{ "p5"   "P" "sp3" }
+>> 	{ "pb"   "P" "sp3" }
+>> 	{ "pc"   "P" "sp3" }
+>> 	{ "pd"   "P" "sp3" }
+>> 	{ "pe"   "P" "sp3" }
+>> 	{ "pf"   "P" "sp3" }
+>> 	{ "px"   "P" "sp3" }
+>> 	{ "py"   "P" "sp3" }
+>> 	{ "f"   "F" "sp3" }
+>> 	{ "cl"  "Cl" "sp3" }
+>> 	{ "br"  "Br" "sp3" }
+>> 	{ "i"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the general force field parameter set.
+>> #
+>> gaff = loadamberparams gaff.dat
+Loading parameters: /home/mavoegel/amber14/dat/leap/parm/gaff.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 1.7, Nov 2013)
+> 
+> mods = loadamberparams CNT_arm_oh-08-45_AC.frcmod
+Loading parameters: ./CNT_arm_oh-08-45_AC.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+remark goes here
+> CNT = loadmol2 CNT_arm_oh-08-45_user_gaff.mol2
+Loading Mol2 file: ./CNT_arm_oh-08-45_user_gaff.mol2
+Reading MOLECULE named CNT
+> check CNT
+Checking 'CNT'....
+Checking parameters for unit 'CNT'.
+Checking for bond parameters.
+Checking for angle parameters.
+Unit is OK.
+> saveamberparm CNT CNT_arm_oh-08-45_AC.prmtop CNT_arm_oh-08-45_AC.inpcrd
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+--Impropers:
+  1	C100<CNT> - C117<CNT> - C116<CNT> - C132<CNT>
+  1	C101<CNT> - C116<CNT> - C117<CNT> - C133<CNT>
+  1	C102<CNT> - C119<CNT> - C118<CNT> - C134<CNT>
+  1	C103<CNT> - C118<CNT> - C119<CNT> - C135<CNT>
+  1	C104<CNT> - C121<CNT> - C120<CNT> - C136<CNT>
+  1	C105<CNT> - C120<CNT> - C121<CNT> - C137<CNT>
+  1	C106<CNT> - C123<CNT> - C122<CNT> - C138<CNT>
+  1	C107<CNT> - C122<CNT> - C123<CNT> - C139<CNT>
+  1	C108<CNT> - C125<CNT> - C124<CNT> - C140<CNT>
+  1	C109<CNT> - C124<CNT> - C125<CNT> - C141<CNT>
+  1	C10<CNT> - C25<CNT> - C9<CNT> - H9<CNT>
+  1	C10<CNT> - C27<CNT> - C26<CNT> - C42<CNT>
+  1	C110<CNT> - C127<CNT> - C126<CNT> - C142<CNT>
+  1	C111<CNT> - C126<CNT> - C127<CNT> - C143<CNT>
+  1	C112<CNT> - C143<CNT> - C128<CNT> - C144<CNT>
+  1	C113<CNT> - C130<CNT> - C129<CNT> - C145<CNT>
+  1	C114<CNT> - C129<CNT> - C130<CNT> - C146<CNT>
+  1	C115<CNT> - C132<CNT> - C131<CNT> - C147<CNT>
+  1	C116<CNT> - C131<CNT> - C132<CNT> - C148<CNT>
+  1	C117<CNT> - C134<CNT> - C133<CNT> - C149<CNT>
+  1	C118<CNT> - C133<CNT> - C134<CNT> - C150<CNT>
+  1	C119<CNT> - C136<CNT> - C135<CNT> - C151<CNT>
+  1	C11<CNT> - C26<CNT> - C27<CNT> - C43<CNT>
+  1	C11<CNT> - C28<CNT> - C12<CNT> - O6<CNT>
+  1	C120<CNT> - C135<CNT> - C136<CNT> - C152<CNT>
+  1	C121<CNT> - C138<CNT> - C137<CNT> - C153<CNT>
+  1	C122<CNT> - C137<CNT> - C138<CNT> - C154<CNT>
+  1	C123<CNT> - C140<CNT> - C139<CNT> - C155<CNT>
+  1	C124<CNT> - C139<CNT> - C140<CNT> - C156<CNT>
+  1	C125<CNT> - C142<CNT> - C141<CNT> - C157<CNT>
+  1	C126<CNT> - C141<CNT> - C142<CNT> - C158<CNT>
+  1	C127<CNT> - C128<CNT> - C143<CNT> - C159<CNT>
+  1	C128<CNT> - C145<CNT> - C144<CNT> - C160<CNT>
+  1	C129<CNT> - C144<CNT> - C145<CNT> - C161<CNT>
+  1	C12<CNT> - C27<CNT> - C11<CNT> - H11<CNT>
+  1	C12<CNT> - C29<CNT> - C28<CNT> - C44<CNT>
+  1	C130<CNT> - C147<CNT> - C146<CNT> - C162<CNT>
+  1	C131<CNT> - C146<CNT> - C147<CNT> - C163<CNT>
+  1	C132<CNT> - C149<CNT> - C148<CNT> - C164<CNT>
+  1	C133<CNT> - C148<CNT> - C149<CNT> - C165<CNT>
+  1	C134<CNT> - C151<CNT> - C150<CNT> - C166<CNT>
+  1	C135<CNT> - C150<CNT> - C151<CNT> - C167<CNT>
+  1	C136<CNT> - C153<CNT> - C152<CNT> - C168<CNT>
+  1	C137<CNT> - C152<CNT> - C153<CNT> - C169<CNT>
+  1	C138<CNT> - C155<CNT> - C154<CNT> - C170<CNT>
+  1	C139<CNT> - C154<CNT> - C155<CNT> - C171<CNT>
+  1	C13<CNT> - C28<CNT> - C29<CNT> - C45<CNT>
+  1	C13<CNT> - C30<CNT> - C14<CNT> - O7<CNT>
+  1	C140<CNT> - C157<CNT> - C156<CNT> - C172<CNT>
+  1	C141<CNT> - C156<CNT> - C157<CNT> - C173<CNT>
+  1	C142<CNT> - C159<CNT> - C158<CNT> - C174<CNT>
+  1	C143<CNT> - C158<CNT> - C159<CNT> - C175<CNT>
+  1	C144<CNT> - C175<CNT> - C160<CNT> - C176<CNT>
+  1	C145<CNT> - C162<CNT> - C161<CNT> - C177<CNT>
+  1	C146<CNT> - C161<CNT> - C162<CNT> - C178<CNT>
+  1	C147<CNT> - C164<CNT> - C163<CNT> - C179<CNT>
+  1	C148<CNT> - C163<CNT> - C164<CNT> - C180<CNT>
+  1	C149<CNT> - C166<CNT> - C165<CNT> - C181<CNT>
+  1	C14<CNT> - C29<CNT> - C13<CNT> - H13<CNT>
+  1	C14<CNT> - C31<CNT> - C30<CNT> - C46<CNT>
+  1	C150<CNT> - C165<CNT> - C166<CNT> - C182<CNT>
+  1	C151<CNT> - C168<CNT> - C167<CNT> - C183<CNT>
+  1	C152<CNT> - C167<CNT> - C168<CNT> - C184<CNT>
+  1	C153<CNT> - C170<CNT> - C169<CNT> - C185<CNT>
+  1	C154<CNT> - C169<CNT> - C170<CNT> - C186<CNT>
+  1	C155<CNT> - C172<CNT> - C171<CNT> - C187<CNT>
+  1	C156<CNT> - C171<CNT> - C172<CNT> - C188<CNT>
+  1	C157<CNT> - C174<CNT> - C173<CNT> - C189<CNT>
+  1	C158<CNT> - C173<CNT> - C174<CNT> - C190<CNT>
+  1	C159<CNT> - C160<CNT> - C175<CNT> - C191<CNT>
+  1	C15<CNT> - C16<CNT> - C<CNT> - O<CNT>
+  1	C15<CNT> - C30<CNT> - C31<CNT> - C47<CNT>
+  1	C160<CNT> - C177<CNT> - C176<CNT> - C192<CNT>
+  1	C161<CNT> - C176<CNT> - C177<CNT> - C193<CNT>
+  1	C162<CNT> - C179<CNT> - C178<CNT> - C194<CNT>
+  1	C163<CNT> - C178<CNT> - C179<CNT> - C195<CNT>
+  1	C164<CNT> - C181<CNT> - C180<CNT> - C196<CNT>
+  1	C165<CNT> - C180<CNT> - C181<CNT> - C197<CNT>
+  1	C166<CNT> - C183<CNT> - C182<CNT> - C198<CNT>
+  1	C167<CNT> - C182<CNT> - C183<CNT> - C199<CNT>
+  1	C168<CNT> - C185<CNT> - C184<CNT> - C200<CNT>
+  1	C169<CNT> - C184<CNT> - C185<CNT> - C201<CNT>
+  1	C16<CNT> - C47<CNT> - C32<CNT> - C48<CNT>
+  1	C170<CNT> - C187<CNT> - C186<CNT> - C202<CNT>
+  1	C171<CNT> - C186<CNT> - C187<CNT> - C203<CNT>
+  1	C172<CNT> - C189<CNT> - C188<CNT> - C204<CNT>
+  1	C173<CNT> - C188<CNT> - C189<CNT> - C205<CNT>
+  1	C174<CNT> - C191<CNT> - C190<CNT> - C206<CNT>
+  1	C175<CNT> - C190<CNT> - C191<CNT> - C207<CNT>
+  1	C176<CNT> - C207<CNT> - C192<CNT> - C208<CNT>
+  1	C177<CNT> - C194<CNT> - C193<CNT> - C209<CNT>
+  1	C178<CNT> - C193<CNT> - C194<CNT> - C210<CNT>
+  1	C179<CNT> - C196<CNT> - C195<CNT> - C211<CNT>
+  1	C17<CNT> - C34<CNT> - C33<CNT> - C49<CNT>
+  1	C180<CNT> - C195<CNT> - C196<CNT> - C212<CNT>
+  1	C181<CNT> - C198<CNT> - C197<CNT> - C213<CNT>
+  1	C182<CNT> - C197<CNT> - C198<CNT> - C214<CNT>
+  1	C183<CNT> - C200<CNT> - C199<CNT> - C215<CNT>
+  1	C184<CNT> - C199<CNT> - C200<CNT> - C216<CNT>
+  1	C185<CNT> - C202<CNT> - C201<CNT> - C217<CNT>
+  1	C186<CNT> - C201<CNT> - C202<CNT> - C218<CNT>
+  1	C187<CNT> - C204<CNT> - C203<CNT> - C219<CNT>
+  1	C188<CNT> - C203<CNT> - C204<CNT> - C220<CNT>
+  1	C189<CNT> - C206<CNT> - C205<CNT> - C221<CNT>
+  1	C18<CNT> - C33<CNT> - C34<CNT> - C50<CNT>
+  1	C190<CNT> - C205<CNT> - C206<CNT> - C222<CNT>
+  1	C191<CNT> - C192<CNT> - C207<CNT> - C223<CNT>
+  1	C192<CNT> - C209<CNT> - C208<CNT> - C224<CNT>
+  1	C193<CNT> - C208<CNT> - C209<CNT> - C225<CNT>
+  1	C194<CNT> - C211<CNT> - C210<CNT> - C226<CNT>
+  1	C195<CNT> - C210<CNT> - C211<CNT> - C227<CNT>
+  1	C196<CNT> - C213<CNT> - C212<CNT> - C228<CNT>
+  1	C197<CNT> - C212<CNT> - C213<CNT> - C229<CNT>
+  1	C198<CNT> - C215<CNT> - C214<CNT> - C230<CNT>
+  1	C199<CNT> - C214<CNT> - C215<CNT> - C231<CNT>
+  1	C19<CNT> - C36<CNT> - C35<CNT> - C51<CNT>
+  1	C1<CNT> - C16<CNT> - C17<CNT> - C33<CNT>
+  1	C1<CNT> - C18<CNT> - C2<CNT> - O1<CNT>
+  1	C200<CNT> - C217<CNT> - C216<CNT> - C232<CNT>
+  1	C201<CNT> - C216<CNT> - C217<CNT> - C233<CNT>
+  1	C202<CNT> - C219<CNT> - C218<CNT> - C234<CNT>
+  1	C203<CNT> - C218<CNT> - C219<CNT> - C235<CNT>
+  1	C204<CNT> - C221<CNT> - C220<CNT> - C236<CNT>
+  1	C205<CNT> - C220<CNT> - C221<CNT> - C237<CNT>
+  1	C206<CNT> - C223<CNT> - C222<CNT> - C238<CNT>
+  1	C207<CNT> - C222<CNT> - C223<CNT> - C239<CNT>
+  1	C208<CNT> - C239<CNT> - C224<CNT> - C240<CNT>
+  1	C209<CNT> - C226<CNT> - C225<CNT> - C241<CNT>
+  1	C20<CNT> - C35<CNT> - C36<CNT> - C52<CNT>
+  1	C210<CNT> - C225<CNT> - C226<CNT> - C242<CNT>
+  1	C211<CNT> - C228<CNT> - C227<CNT> - C243<CNT>
+  1	C212<CNT> - C227<CNT> - C228<CNT> - C244<CNT>
+  1	C213<CNT> - C230<CNT> - C229<CNT> - C245<CNT>
+  1	C214<CNT> - C229<CNT> - C230<CNT> - C246<CNT>
+  1	C215<CNT> - C232<CNT> - C231<CNT> - C247<CNT>
+  1	C216<CNT> - C231<CNT> - C232<CNT> - C248<CNT>
+  1	C217<CNT> - C234<CNT> - C233<CNT> - C249<CNT>
+  1	C218<CNT> - C233<CNT> - C234<CNT> - C250<CNT>
+  1	C219<CNT> - C236<CNT> - C235<CNT> - C251<CNT>
+  1	C21<CNT> - C38<CNT> - C37<CNT> - C53<CNT>
+  1	C220<CNT> - C235<CNT> - C236<CNT> - C252<CNT>
+  1	C221<CNT> - C238<CNT> - C237<CNT> - C253<CNT>
+  1	C222<CNT> - C237<CNT> - C238<CNT> - C254<CNT>
+  1	C223<CNT> - C224<CNT> - C239<CNT> - C255<CNT>
+  1	C224<CNT> - C241<CNT> - C240<CNT> - C256<CNT>
+  1	C225<CNT> - C240<CNT> - C241<CNT> - C257<CNT>
+  1	C226<CNT> - C243<CNT> - C242<CNT> - C258<CNT>
+  1	C227<CNT> - C242<CNT> - C243<CNT> - C259<CNT>
+  1	C228<CNT> - C245<CNT> - C244<CNT> - C260<CNT>
+  1	C229<CNT> - C244<CNT> - C245<CNT> - C261<CNT>
+  1	C22<CNT> - C37<CNT> - C38<CNT> - C54<CNT>
+  1	C230<CNT> - C247<CNT> - C246<CNT> - C262<CNT>
+  1	C231<CNT> - C246<CNT> - C247<CNT> - C263<CNT>
+  1	C232<CNT> - C249<CNT> - C248<CNT> - C264<CNT>
+  1	C233<CNT> - C248<CNT> - C249<CNT> - C265<CNT>
+  1	C234<CNT> - C251<CNT> - C250<CNT> - C266<CNT>
+  1	C235<CNT> - C250<CNT> - C251<CNT> - C267<CNT>
+  1	C236<CNT> - C253<CNT> - C252<CNT> - C268<CNT>
+  1	C237<CNT> - C252<CNT> - C253<CNT> - C269<CNT>
+  1	C238<CNT> - C255<CNT> - C254<CNT> - C270<CNT>
+  1	C239<CNT> - C254<CNT> - C255<CNT> - C271<CNT>
+  1	C23<CNT> - C40<CNT> - C39<CNT> - C55<CNT>
+  1	C240<CNT> - C271<CNT> - C256<CNT> - C272<CNT>
+  1	C241<CNT> - C258<CNT> - C257<CNT> - C273<CNT>
+  1	C242<CNT> - C257<CNT> - C258<CNT> - C274<CNT>
+  1	C243<CNT> - C260<CNT> - C259<CNT> - C275<CNT>
+  1	C244<CNT> - C259<CNT> - C260<CNT> - C276<CNT>
+  1	C245<CNT> - C262<CNT> - C261<CNT> - C277<CNT>
+  1	C246<CNT> - C261<CNT> - C262<CNT> - C278<CNT>
+  1	C247<CNT> - C264<CNT> - C263<CNT> - C279<CNT>
+  1	C248<CNT> - C263<CNT> - C264<CNT> - C280<CNT>
+  1	C249<CNT> - C266<CNT> - C265<CNT> - C281<CNT>
+  1	C24<CNT> - C39<CNT> - C40<CNT> - C56<CNT>
+  1	C250<CNT> - C265<CNT> - C266<CNT> - C282<CNT>
+  1	C251<CNT> - C268<CNT> - C267<CNT> - C283<CNT>
+  1	C252<CNT> - C267<CNT> - C268<CNT> - C284<CNT>
+  1	C253<CNT> - C270<CNT> - C269<CNT> - C285<CNT>
+  1	C254<CNT> - C269<CNT> - C270<CNT> - C286<CNT>
+  1	C255<CNT> - C256<CNT> - C271<CNT> - C287<CNT>
+  1	C256<CNT> - C273<CNT> - C272<CNT> - C288<CNT>
+  1	C257<CNT> - C272<CNT> - C273<CNT> - C289<CNT>
+  1	C258<CNT> - C275<CNT> - C274<CNT> - C290<CNT>
+  1	C259<CNT> - C274<CNT> - C275<CNT> - C291<CNT>
+  1	C25<CNT> - C42<CNT> - C41<CNT> - C57<CNT>
+  1	C260<CNT> - C277<CNT> - C276<CNT> - C292<CNT>
+  1	C261<CNT> - C276<CNT> - C277<CNT> - C293<CNT>
+  1	C262<CNT> - C279<CNT> - C278<CNT> - C294<CNT>
+  1	C263<CNT> - C278<CNT> - C279<CNT> - C295<CNT>
+  1	C264<CNT> - C281<CNT> - C280<CNT> - C296<CNT>
+  1	C265<CNT> - C280<CNT> - C281<CNT> - C297<CNT>
+  1	C266<CNT> - C283<CNT> - C282<CNT> - C298<CNT>
+  1	C267<CNT> - C282<CNT> - C283<CNT> - C299<CNT>
+  1	C268<CNT> - C285<CNT> - C284<CNT> - C300<CNT>
+  1	C269<CNT> - C284<CNT> - C285<CNT> - C301<CNT>
+  1	C26<CNT> - C41<CNT> - C42<CNT> - C58<CNT>
+  1	C270<CNT> - C287<CNT> - C286<CNT> - C302<CNT>
+  1	C271<CNT> - C286<CNT> - C287<CNT> - C303<CNT>
+  1	C272<CNT> - C303<CNT> - C288<CNT> - C304<CNT>
+  1	C273<CNT> - C290<CNT> - C289<CNT> - C305<CNT>
+  1	C274<CNT> - C289<CNT> - C290<CNT> - C306<CNT>
+  1	C275<CNT> - C292<CNT> - C291<CNT> - C307<CNT>
+  1	C276<CNT> - C291<CNT> - C292<CNT> - C308<CNT>
+  1	C277<CNT> - C294<CNT> - C293<CNT> - C309<CNT>
+  1	C278<CNT> - C293<CNT> - C294<CNT> - C310<CNT>
+  1	C279<CNT> - C296<CNT> - C295<CNT> - C311<CNT>
+  1	C27<CNT> - C44<CNT> - C43<CNT> - C59<CNT>
+  1	C280<CNT> - C295<CNT> - C296<CNT> - C312<CNT>
+  1	C281<CNT> - C298<CNT> - C297<CNT> - C313<CNT>
+  1	C282<CNT> - C297<CNT> - C298<CNT> - C314<CNT>
+  1	C283<CNT> - C300<CNT> - C299<CNT> - C315<CNT>
+  1	C284<CNT> - C299<CNT> - C300<CNT> - C316<CNT>
+  1	C285<CNT> - C302<CNT> - C301<CNT> - C317<CNT>
+  1	C286<CNT> - C301<CNT> - C302<CNT> - C318<CNT>
+  1	C287<CNT> - C288<CNT> - C303<CNT> - C319<CNT>
+  1	C288<CNT> - C305<CNT> - C304<CNT> - C320<CNT>
+  1	C289<CNT> - C304<CNT> - C305<CNT> - C321<CNT>
+  1	C28<CNT> - C43<CNT> - C44<CNT> - C60<CNT>
+  1	C290<CNT> - C307<CNT> - C306<CNT> - C322<CNT>
+  1	C291<CNT> - C306<CNT> - C307<CNT> - C323<CNT>
+  1	C292<CNT> - C309<CNT> - C308<CNT> - C324<CNT>
+  1	C293<CNT> - C308<CNT> - C309<CNT> - C325<CNT>
+  1	C294<CNT> - C311<CNT> - C310<CNT> - C326<CNT>
+  1	C295<CNT> - C310<CNT> - C311<CNT> - C327<CNT>
+  1	C296<CNT> - C313<CNT> - C312<CNT> - C328<CNT>
+  1	C297<CNT> - C312<CNT> - C313<CNT> - C329<CNT>
+  1	C298<CNT> - C315<CNT> - C314<CNT> - C330<CNT>
+  1	C299<CNT> - C314<CNT> - C315<CNT> - C331<CNT>
+  1	C29<CNT> - C46<CNT> - C45<CNT> - C61<CNT>
+  1	C2<CNT> - C17<CNT> - C1<CNT> - H1<CNT>
+  1	C2<CNT> - C19<CNT> - C18<CNT> - C34<CNT>
+  1	C300<CNT> - C317<CNT> - C316<CNT> - C332<CNT>
+  1	C301<CNT> - C316<CNT> - C317<CNT> - C333<CNT>
+  1	C302<CNT> - C319<CNT> - C318<CNT> - C334<CNT>
+  1	C303<CNT> - C318<CNT> - C319<CNT> - C335<CNT>
+  1	C304<CNT> - C335<CNT> - C320<CNT> - C336<CNT>
+  1	C305<CNT> - C322<CNT> - C321<CNT> - C337<CNT>
+  1	C306<CNT> - C321<CNT> - C322<CNT> - C338<CNT>
+  1	C307<CNT> - C324<CNT> - C323<CNT> - C339<CNT>
+  1	C308<CNT> - C323<CNT> - C324<CNT> - C340<CNT>
+  1	C309<CNT> - C326<CNT> - C325<CNT> - C341<CNT>
+  1	C30<CNT> - C45<CNT> - C46<CNT> - C62<CNT>
+  1	C310<CNT> - C325<CNT> - C326<CNT> - C342<CNT>
+  1	C311<CNT> - C328<CNT> - C327<CNT> - C343<CNT>
+  1	C312<CNT> - C327<CNT> - C328<CNT> - C344<CNT>
+  1	C313<CNT> - C330<CNT> - C329<CNT> - C345<CNT>
+  1	C314<CNT> - C329<CNT> - C330<CNT> - C346<CNT>
+  1	C315<CNT> - C332<CNT> - C331<CNT> - C347<CNT>
+  1	C316<CNT> - C331<CNT> - C332<CNT> - C348<CNT>
+  1	C317<CNT> - C334<CNT> - C333<CNT> - C349<CNT>
+  1	C318<CNT> - C333<CNT> - C334<CNT> - C350<CNT>
+  1	C319<CNT> - C320<CNT> - C335<CNT> - C351<CNT>
+  1	C31<CNT> - C32<CNT> - C47<CNT> - C63<CNT>
+  1	C320<CNT> - C337<CNT> - C336<CNT> - C352<CNT>
+  1	C321<CNT> - C336<CNT> - C337<CNT> - C353<CNT>
+  1	C322<CNT> - C339<CNT> - C338<CNT> - C354<CNT>
+  1	C323<CNT> - C338<CNT> - C339<CNT> - C355<CNT>
+  1	C324<CNT> - C341<CNT> - C340<CNT> - C356<CNT>
+  1	C325<CNT> - C340<CNT> - C341<CNT> - C357<CNT>
+  1	C326<CNT> - C343<CNT> - C342<CNT> - C358<CNT>
+  1	C327<CNT> - C342<CNT> - C343<CNT> - C359<CNT>
+  1	C328<CNT> - C345<CNT> - C344<CNT> - C360<CNT>
+  1	C329<CNT> - C344<CNT> - C345<CNT> - C361<CNT>
+  1	C32<CNT> - C49<CNT> - C48<CNT> - C64<CNT>
+  1	C330<CNT> - C347<CNT> - C346<CNT> - C362<CNT>
+  1	C331<CNT> - C346<CNT> - C347<CNT> - C363<CNT>
+  1	C332<CNT> - C349<CNT> - C348<CNT> - C364<CNT>
+  1	C333<CNT> - C348<CNT> - C349<CNT> - C365<CNT>
+  1	C334<CNT> - C351<CNT> - C350<CNT> - C366<CNT>
+  1	C335<CNT> - C350<CNT> - C351<CNT> - C367<CNT>
+  1	C336<CNT> - C367<CNT> - C352<CNT> - C368<CNT>
+  1	C337<CNT> - C354<CNT> - C353<CNT> - C369<CNT>
+  1	C338<CNT> - C353<CNT> - C354<CNT> - C370<CNT>
+  1	C339<CNT> - C356<CNT> - C355<CNT> - C371<CNT>
+  1	C33<CNT> - C48<CNT> - C49<CNT> - C65<CNT>
+  1	C340<CNT> - C355<CNT> - C356<CNT> - C372<CNT>
+  1	C341<CNT> - C358<CNT> - C357<CNT> - C373<CNT>
+  1	C342<CNT> - C357<CNT> - C358<CNT> - C374<CNT>
+  1	C343<CNT> - C360<CNT> - C359<CNT> - C375<CNT>
+  1	C344<CNT> - C359<CNT> - C360<CNT> - C376<CNT>
+  1	C345<CNT> - C362<CNT> - C361<CNT> - C377<CNT>
+  1	C346<CNT> - C361<CNT> - C362<CNT> - C378<CNT>
+  1	C347<CNT> - C364<CNT> - C363<CNT> - C379<CNT>
+  1	C348<CNT> - C363<CNT> - C364<CNT> - C380<CNT>
+  1	C349<CNT> - C366<CNT> - C365<CNT> - C381<CNT>
+  1	C34<CNT> - C51<CNT> - C50<CNT> - C66<CNT>
+  1	C350<CNT> - C365<CNT> - C366<CNT> - C382<CNT>
+  1	C351<CNT> - C352<CNT> - C367<CNT> - C383<CNT>
+  1	C352<CNT> - C369<CNT> - C368<CNT> - C384<CNT>
+  1	C353<CNT> - C368<CNT> - C369<CNT> - C385<CNT>
+  1	C354<CNT> - C371<CNT> - C370<CNT> - C386<CNT>
+  1	C355<CNT> - C370<CNT> - C371<CNT> - C387<CNT>
+  1	C356<CNT> - C373<CNT> - C372<CNT> - C388<CNT>
+  1	C357<CNT> - C372<CNT> - C373<CNT> - C389<CNT>
+  1	C358<CNT> - C375<CNT> - C374<CNT> - C390<CNT>
+  1	C359<CNT> - C374<CNT> - C375<CNT> - C391<CNT>
+  1	C35<CNT> - C50<CNT> - C51<CNT> - C67<CNT>
+  1	C360<CNT> - C377<CNT> - C376<CNT> - C392<CNT>
+  1	C361<CNT> - C376<CNT> - C377<CNT> - C393<CNT>
+  1	C362<CNT> - C379<CNT> - C378<CNT> - C394<CNT>
+  1	C363<CNT> - C378<CNT> - C379<CNT> - C395<CNT>
+  1	C364<CNT> - C381<CNT> - C380<CNT> - C396<CNT>
+  1	C365<CNT> - C380<CNT> - C381<CNT> - C397<CNT>
+  1	C366<CNT> - C383<CNT> - C382<CNT> - C398<CNT>
+  1	C367<CNT> - C382<CNT> - C383<CNT> - C399<CNT>
+  1	C368<CNT> - C399<CNT> - C384<CNT> - C400<CNT>
+  1	C369<CNT> - C386<CNT> - C385<CNT> - C401<CNT>
+  1	C36<CNT> - C53<CNT> - C52<CNT> - C68<CNT>
+  1	C370<CNT> - C385<CNT> - C386<CNT> - C402<CNT>
+  1	C371<CNT> - C388<CNT> - C387<CNT> - C403<CNT>
+  1	C372<CNT> - C387<CNT> - C388<CNT> - C404<CNT>
+  1	C373<CNT> - C390<CNT> - C389<CNT> - C405<CNT>
+  1	C374<CNT> - C389<CNT> - C390<CNT> - C406<CNT>
+  1	C375<CNT> - C392<CNT> - C391<CNT> - C407<CNT>
+  1	C376<CNT> - C391<CNT> - C392<CNT> - C408<CNT>
+  1	C377<CNT> - C394<CNT> - C393<CNT> - C409<CNT>
+  1	C378<CNT> - C393<CNT> - C394<CNT> - C410<CNT>
+  1	C379<CNT> - C396<CNT> - C395<CNT> - C411<CNT>
+  1	C37<CNT> - C52<CNT> - C53<CNT> - C69<CNT>
+  1	C380<CNT> - C395<CNT> - C396<CNT> - C412<CNT>
+  1	C381<CNT> - C398<CNT> - C397<CNT> - C413<CNT>
+  1	C382<CNT> - C397<CNT> - C398<CNT> - C414<CNT>
+  1	C383<CNT> - C384<CNT> - C399<CNT> - C415<CNT>
+  1	C384<CNT> - C401<CNT> - C400<CNT> - C416<CNT>
+  1	C385<CNT> - C400<CNT> - C401<CNT> - C417<CNT>
+  1	C386<CNT> - C403<CNT> - C402<CNT> - C418<CNT>
+  1	C387<CNT> - C402<CNT> - C403<CNT> - C419<CNT>
+  1	C388<CNT> - C405<CNT> - C404<CNT> - C420<CNT>
+  1	C389<CNT> - C404<CNT> - C405<CNT> - C421<CNT>
+  1	C38<CNT> - C55<CNT> - C54<CNT> - C70<CNT>
+  1	C390<CNT> - C407<CNT> - C406<CNT> - C422<CNT>
+  1	C391<CNT> - C406<CNT> - C407<CNT> - C423<CNT>
+  1	C392<CNT> - C409<CNT> - C408<CNT> - C424<CNT>
+  1	C393<CNT> - C408<CNT> - C409<CNT> - C425<CNT>
+  1	C394<CNT> - C411<CNT> - C410<CNT> - C426<CNT>
+  1	C395<CNT> - C410<CNT> - C411<CNT> - C427<CNT>
+  1	C396<CNT> - C413<CNT> - C412<CNT> - C428<CNT>
+  1	C397<CNT> - C412<CNT> - C413<CNT> - C429<CNT>
+  1	C398<CNT> - C415<CNT> - C414<CNT> - C430<CNT>
+  1	C399<CNT> - C414<CNT> - C415<CNT> - C431<CNT>
+  1	C39<CNT> - C54<CNT> - C55<CNT> - C71<CNT>
+  1	C3<CNT> - C18<CNT> - C19<CNT> - C35<CNT>
+  1	C3<CNT> - C20<CNT> - C4<CNT> - O2<CNT>
+  1	C400<CNT> - C431<CNT> - C416<CNT> - C432<CNT>
+  1	C401<CNT> - C418<CNT> - C417<CNT> - C433<CNT>
+  1	C402<CNT> - C417<CNT> - C418<CNT> - C434<CNT>
+  1	C403<CNT> - C420<CNT> - C419<CNT> - C435<CNT>
+  1	C404<CNT> - C419<CNT> - C420<CNT> - C436<CNT>
+  1	C405<CNT> - C422<CNT> - C421<CNT> - C437<CNT>
+  1	C406<CNT> - C421<CNT> - C422<CNT> - C438<CNT>
+  1	C407<CNT> - C424<CNT> - C423<CNT> - C439<CNT>
+  1	C408<CNT> - C423<CNT> - C424<CNT> - C440<CNT>
+  1	C409<CNT> - C426<CNT> - C425<CNT> - C441<CNT>
+  1	C40<CNT> - C57<CNT> - C56<CNT> - C72<CNT>
+  1	C410<CNT> - C425<CNT> - C426<CNT> - C442<CNT>
+  1	C411<CNT> - C428<CNT> - C427<CNT> - C443<CNT>
+  1	C412<CNT> - C427<CNT> - C428<CNT> - C444<CNT>
+  1	C413<CNT> - C430<CNT> - C429<CNT> - C445<CNT>
+  1	C414<CNT> - C429<CNT> - C430<CNT> - C446<CNT>
+  1	C415<CNT> - C416<CNT> - C431<CNT> - C447<CNT>
+  1	C416<CNT> - C433<CNT> - C432<CNT> - C448<CNT>
+  1	C417<CNT> - C432<CNT> - C433<CNT> - C449<CNT>
+  1	C418<CNT> - C435<CNT> - C434<CNT> - C450<CNT>
+  1	C419<CNT> - C434<CNT> - C435<CNT> - C451<CNT>
+  1	C41<CNT> - C56<CNT> - C57<CNT> - C73<CNT>
+  1	C420<CNT> - C437<CNT> - C436<CNT> - C452<CNT>
+  1	C421<CNT> - C436<CNT> - C437<CNT> - C453<CNT>
+  1	C422<CNT> - C439<CNT> - C438<CNT> - C454<CNT>
+  1	C423<CNT> - C438<CNT> - C439<CNT> - C455<CNT>
+  1	C424<CNT> - C441<CNT> - C440<CNT> - C456<CNT>
+  1	C425<CNT> - C440<CNT> - C441<CNT> - C457<CNT>
+  1	C426<CNT> - C443<CNT> - C442<CNT> - C458<CNT>
+  1	C427<CNT> - C442<CNT> - C443<CNT> - C459<CNT>
+  1	C428<CNT> - C445<CNT> - C444<CNT> - C460<CNT>
+  1	C429<CNT> - C444<CNT> - C445<CNT> - C461<CNT>
+  1	C42<CNT> - C59<CNT> - C58<CNT> - C74<CNT>
+  1	C430<CNT> - C447<CNT> - C446<CNT> - C462<CNT>
+  1	C431<CNT> - C446<CNT> - C447<CNT> - C463<CNT>
+  1	C432<CNT> - C463<CNT> - C448<CNT> - C464<CNT>
+  1	C433<CNT> - C450<CNT> - C449<CNT> - C465<CNT>
+  1	C434<CNT> - C449<CNT> - C450<CNT> - C466<CNT>
+  1	C435<CNT> - C452<CNT> - C451<CNT> - C467<CNT>
+  1	C436<CNT> - C451<CNT> - C452<CNT> - C468<CNT>
+  1	C437<CNT> - C454<CNT> - C453<CNT> - C469<CNT>
+  1	C438<CNT> - C453<CNT> - C454<CNT> - C470<CNT>
+  1	C439<CNT> - C456<CNT> - C455<CNT> - C471<CNT>
+  1	C43<CNT> - C58<CNT> - C59<CNT> - C75<CNT>
+  1	C440<CNT> - C455<CNT> - C456<CNT> - C472<CNT>
+  1	C441<CNT> - C458<CNT> - C457<CNT> - C473<CNT>
+  1	C442<CNT> - C457<CNT> - C458<CNT> - C474<CNT>
+  1	C443<CNT> - C460<CNT> - C459<CNT> - C475<CNT>
+  1	C444<CNT> - C459<CNT> - C460<CNT> - C476<CNT>
+  1	C445<CNT> - C462<CNT> - C461<CNT> - C477<CNT>
+  1	C446<CNT> - C461<CNT> - C462<CNT> - C478<CNT>
+  1	C447<CNT> - C448<CNT> - C463<CNT> - C479<CNT>
+  1	C448<CNT> - C465<CNT> - C464<CNT> - C480<CNT>
+  1	C449<CNT> - C464<CNT> - C465<CNT> - C481<CNT>
+  1	C44<CNT> - C61<CNT> - C60<CNT> - C76<CNT>
+  1	C450<CNT> - C467<CNT> - C466<CNT> - C482<CNT>
+  1	C451<CNT> - C466<CNT> - C467<CNT> - C483<CNT>
+  1	C452<CNT> - C469<CNT> - C468<CNT> - C484<CNT>
+  1	C453<CNT> - C468<CNT> - C469<CNT> - C485<CNT>
+  1	C454<CNT> - C471<CNT> - C470<CNT> - C486<CNT>
+  1	C455<CNT> - C470<CNT> - C471<CNT> - C487<CNT>
+  1	C456<CNT> - C473<CNT> - C472<CNT> - C488<CNT>
+  1	C457<CNT> - C472<CNT> - C473<CNT> - C489<CNT>
+  1	C458<CNT> - C475<CNT> - C474<CNT> - C490<CNT>
+  1	C459<CNT> - C474<CNT> - C475<CNT> - C491<CNT>
+  1	C45<CNT> - C60<CNT> - C61<CNT> - C77<CNT>
+  1	C460<CNT> - C477<CNT> - C476<CNT> - C492<CNT>
+  1	C461<CNT> - C476<CNT> - C477<CNT> - C493<CNT>
+  1	C462<CNT> - C479<CNT> - C478<CNT> - C494<CNT>
+  1	C463<CNT> - C478<CNT> - C479<CNT> - C495<CNT>
+  1	C464<CNT> - C495<CNT> - C480<CNT> - C496<CNT>
+  1	C465<CNT> - C482<CNT> - C481<CNT> - C497<CNT>
+  1	C466<CNT> - C481<CNT> - C482<CNT> - C498<CNT>
+  1	C467<CNT> - C484<CNT> - C483<CNT> - C499<CNT>
+  1	C468<CNT> - C483<CNT> - C484<CNT> - C500<CNT>
+  1	C469<CNT> - C486<CNT> - C485<CNT> - C501<CNT>
+  1	C46<CNT> - C63<CNT> - C62<CNT> - C78<CNT>
+  1	C470<CNT> - C485<CNT> - C486<CNT> - C502<CNT>
+  1	C471<CNT> - C488<CNT> - C487<CNT> - C503<CNT>
+  1	C472<CNT> - C487<CNT> - C488<CNT> - C504<CNT>
+  1	C473<CNT> - C490<CNT> - C489<CNT> - C505<CNT>
+  1	C474<CNT> - C489<CNT> - C490<CNT> - C506<CNT>
+  1	C475<CNT> - C492<CNT> - C491<CNT> - C507<CNT>
+  1	C476<CNT> - C491<CNT> - C492<CNT> - C508<CNT>
+  1	C477<CNT> - C494<CNT> - C493<CNT> - C509<CNT>
+  1	C478<CNT> - C493<CNT> - C494<CNT> - C510<CNT>
+  1	C479<CNT> - C480<CNT> - C495<CNT> - C511<CNT>
+  1	C47<CNT> - C62<CNT> - C63<CNT> - C79<CNT>
+  1	C480<CNT> - C497<CNT> - C496<CNT> - C512<CNT>
+  1	C481<CNT> - C496<CNT> - C497<CNT> - C513<CNT>
+  1	C482<CNT> - C499<CNT> - C498<CNT> - C514<CNT>
+  1	C483<CNT> - C498<CNT> - C499<CNT> - C515<CNT>
+  1	C484<CNT> - C501<CNT> - C500<CNT> - C516<CNT>
+  1	C485<CNT> - C500<CNT> - C501<CNT> - C517<CNT>
+  1	C486<CNT> - C503<CNT> - C502<CNT> - C518<CNT>
+  1	C487<CNT> - C502<CNT> - C503<CNT> - C519<CNT>
+  1	C488<CNT> - C505<CNT> - C504<CNT> - C520<CNT>
+  1	C489<CNT> - C504<CNT> - C505<CNT> - C521<CNT>
+  1	C48<CNT> - C79<CNT> - C64<CNT> - C80<CNT>
+  1	C490<CNT> - C507<CNT> - C506<CNT> - C522<CNT>
+  1	C491<CNT> - C506<CNT> - C507<CNT> - C523<CNT>
+  1	C492<CNT> - C509<CNT> - C508<CNT> - C524<CNT>
+  1	C493<CNT> - C508<CNT> - C509<CNT> - C525<CNT>
+  1	C494<CNT> - C511<CNT> - C510<CNT> - C526<CNT>
+  1	C495<CNT> - C510<CNT> - C511<CNT> - C527<CNT>
+  1	C496<CNT> - C527<CNT> - C512<CNT> - C528<CNT>
+  1	C497<CNT> - C514<CNT> - C513<CNT> - C529<CNT>
+  1	C498<CNT> - C513<CNT> - C514<CNT> - C530<CNT>
+  1	C499<CNT> - C516<CNT> - C515<CNT> - C531<CNT>
+  1	C49<CNT> - C66<CNT> - C65<CNT> - C81<CNT>
+  1	C4<CNT> - C19<CNT> - C3<CNT> - H3<CNT>
+  1	C4<CNT> - C21<CNT> - C20<CNT> - C36<CNT>
+  1	C500<CNT> - C515<CNT> - C516<CNT> - C532<CNT>
+  1	C501<CNT> - C518<CNT> - C517<CNT> - C533<CNT>
+  1	C502<CNT> - C517<CNT> - C518<CNT> - C534<CNT>
+  1	C503<CNT> - C520<CNT> - C519<CNT> - C535<CNT>
+  1	C504<CNT> - C519<CNT> - C520<CNT> - C536<CNT>
+  1	C505<CNT> - C522<CNT> - C521<CNT> - C537<CNT>
+  1	C506<CNT> - C521<CNT> - C522<CNT> - C538<CNT>
+  1	C507<CNT> - C524<CNT> - C523<CNT> - C539<CNT>
+  1	C508<CNT> - C523<CNT> - C524<CNT> - C540<CNT>
+  1	C509<CNT> - C526<CNT> - C525<CNT> - C541<CNT>
+  1	C50<CNT> - C65<CNT> - C66<CNT> - C82<CNT>
+  1	C510<CNT> - C525<CNT> - C526<CNT> - C542<CNT>
+  1	C511<CNT> - C512<CNT> - C527<CNT> - C543<CNT>
+  1	C512<CNT> - C529<CNT> - C528<CNT> - C544<CNT>
+  1	C513<CNT> - C528<CNT> - C529<CNT> - C545<CNT>
+  1	C514<CNT> - C531<CNT> - C530<CNT> - C546<CNT>
+  1	C515<CNT> - C530<CNT> - C531<CNT> - C547<CNT>
+  1	C516<CNT> - C533<CNT> - C532<CNT> - C548<CNT>
+  1	C517<CNT> - C532<CNT> - C533<CNT> - C549<CNT>
+  1	C518<CNT> - C535<CNT> - C534<CNT> - C550<CNT>
+  1	C519<CNT> - C534<CNT> - C535<CNT> - C551<CNT>
+  1	C51<CNT> - C68<CNT> - C67<CNT> - C83<CNT>
+  1	C520<CNT> - C537<CNT> - C536<CNT> - C552<CNT>
+  1	C521<CNT> - C536<CNT> - C537<CNT> - C553<CNT>
+  1	C522<CNT> - C539<CNT> - C538<CNT> - C554<CNT>
+  1	C523<CNT> - C538<CNT> - C539<CNT> - C555<CNT>
+  1	C524<CNT> - C541<CNT> - C540<CNT> - C556<CNT>
+  1	C525<CNT> - C540<CNT> - C541<CNT> - C557<CNT>
+  1	C526<CNT> - C543<CNT> - C542<CNT> - C558<CNT>
+  1	C527<CNT> - C542<CNT> - C543<CNT> - C559<CNT>
+  1	C528<CNT> - C559<CNT> - C544<CNT> - C560<CNT>
+  1	C529<CNT> - C546<CNT> - C545<CNT> - C561<CNT>
+  1	C52<CNT> - C67<CNT> - C68<CNT> - C84<CNT>
+  1	C530<CNT> - C545<CNT> - C546<CNT> - C562<CNT>
+  1	C531<CNT> - C548<CNT> - C547<CNT> - C563<CNT>
+  1	C532<CNT> - C547<CNT> - C548<CNT> - C564<CNT>
+  1	C533<CNT> - C550<CNT> - C549<CNT> - C565<CNT>
+  1	C534<CNT> - C549<CNT> - C550<CNT> - C566<CNT>
+  1	C535<CNT> - C552<CNT> - C551<CNT> - C567<CNT>
+  1	C536<CNT> - C551<CNT> - C552<CNT> - C568<CNT>
+  1	C537<CNT> - C554<CNT> - C553<CNT> - C569<CNT>
+  1	C538<CNT> - C553<CNT> - C554<CNT> - C570<CNT>
+  1	C539<CNT> - C556<CNT> - C555<CNT> - C571<CNT>
+  1	C53<CNT> - C70<CNT> - C69<CNT> - C85<CNT>
+  1	C540<CNT> - C555<CNT> - C556<CNT> - C572<CNT>
+  1	C541<CNT> - C558<CNT> - C557<CNT> - C573<CNT>
+  1	C542<CNT> - C557<CNT> - C558<CNT> - C574<CNT>
+  1	C543<CNT> - C544<CNT> - C559<CNT> - C575<CNT>
+  1	C544<CNT> - C561<CNT> - C560<CNT> - C576<CNT>
+  1	C545<CNT> - C560<CNT> - C561<CNT> - C577<CNT>
+  1	C546<CNT> - C563<CNT> - C562<CNT> - C578<CNT>
+  1	C547<CNT> - C562<CNT> - C563<CNT> - C579<CNT>
+  1	C548<CNT> - C565<CNT> - C564<CNT> - C580<CNT>
+  1	C549<CNT> - C564<CNT> - C565<CNT> - C581<CNT>
+  1	C54<CNT> - C69<CNT> - C70<CNT> - C86<CNT>
+  1	C550<CNT> - C567<CNT> - C566<CNT> - C582<CNT>
+  1	C551<CNT> - C566<CNT> - C567<CNT> - C583<CNT>
+  1	C552<CNT> - C569<CNT> - C568<CNT> - C584<CNT>
+  1	C553<CNT> - C568<CNT> - C569<CNT> - C585<CNT>
+  1	C554<CNT> - C571<CNT> - C570<CNT> - C586<CNT>
+  1	C555<CNT> - C570<CNT> - C571<CNT> - C587<CNT>
+  1	C556<CNT> - C573<CNT> - C572<CNT> - C588<CNT>
+  1	C557<CNT> - C572<CNT> - C573<CNT> - C589<CNT>
+  1	C558<CNT> - C575<CNT> - C574<CNT> - C590<CNT>
+  1	C559<CNT> - C574<CNT> - C575<CNT> - C591<CNT>
+  1	C55<CNT> - C72<CNT> - C71<CNT> - C87<CNT>
+  1	C560<CNT> - C591<CNT> - C576<CNT> - C592<CNT>
+  1	C561<CNT> - C578<CNT> - C577<CNT> - C593<CNT>
+  1	C562<CNT> - C577<CNT> - C578<CNT> - C594<CNT>
+  1	C563<CNT> - C580<CNT> - C579<CNT> - C595<CNT>
+  1	C564<CNT> - C579<CNT> - C580<CNT> - C596<CNT>
+  1	C565<CNT> - C582<CNT> - C581<CNT> - C597<CNT>
+  1	C566<CNT> - C581<CNT> - C582<CNT> - C598<CNT>
+  1	C567<CNT> - C584<CNT> - C583<CNT> - C599<CNT>
+  1	C568<CNT> - C583<CNT> - C584<CNT> - C600<CNT>
+  1	C569<CNT> - C586<CNT> - C585<CNT> - C601<CNT>
+  1	C56<CNT> - C71<CNT> - C72<CNT> - C88<CNT>
+  1	C570<CNT> - C585<CNT> - C586<CNT> - C602<CNT>
+  1	C571<CNT> - C588<CNT> - C587<CNT> - C603<CNT>
+  1	C572<CNT> - C587<CNT> - C588<CNT> - C604<CNT>
+  1	C573<CNT> - C590<CNT> - C589<CNT> - C605<CNT>
+  1	C574<CNT> - C589<CNT> - C590<CNT> - C606<CNT>
+  1	C575<CNT> - C576<CNT> - C591<CNT> - C607<CNT>
+  1	C576<CNT> - C593<CNT> - C592<CNT> - C608<CNT>
+  1	C577<CNT> - C592<CNT> - C593<CNT> - C609<CNT>
+  1	C578<CNT> - C595<CNT> - C594<CNT> - C610<CNT>
+  1	C579<CNT> - C594<CNT> - C595<CNT> - C611<CNT>
+  1	C57<CNT> - C74<CNT> - C73<CNT> - C89<CNT>
+  1	C580<CNT> - C597<CNT> - C596<CNT> - C612<CNT>
+  1	C581<CNT> - C596<CNT> - C597<CNT> - C613<CNT>
+  1	C582<CNT> - C599<CNT> - C598<CNT> - C614<CNT>
+  1	C583<CNT> - C598<CNT> - C599<CNT> - C615<CNT>
+  1	C584<CNT> - C601<CNT> - C600<CNT> - C616<CNT>
+  1	C585<CNT> - C600<CNT> - C601<CNT> - C617<CNT>
+  1	C586<CNT> - C603<CNT> - C602<CNT> - C618<CNT>
+  1	C587<CNT> - C602<CNT> - C603<CNT> - C619<CNT>
+  1	C588<CNT> - C605<CNT> - C604<CNT> - C620<CNT>
+  1	C589<CNT> - C604<CNT> - C605<CNT> - C621<CNT>
+  1	C58<CNT> - C73<CNT> - C74<CNT> - C90<CNT>
+  1	C590<CNT> - C607<CNT> - C606<CNT> - C622<CNT>
+  1	C591<CNT> - C606<CNT> - C607<CNT> - C623<CNT>
+  1	C592<CNT> - C623<CNT> - C608<CNT> - C624<CNT>
+  1	C593<CNT> - C610<CNT> - C609<CNT> - C625<CNT>
+  1	C594<CNT> - C609<CNT> - C610<CNT> - C626<CNT>
+  1	C595<CNT> - C612<CNT> - C611<CNT> - C627<CNT>
+  1	C596<CNT> - C611<CNT> - C612<CNT> - C628<CNT>
+  1	C597<CNT> - C614<CNT> - C613<CNT> - C629<CNT>
+  1	C598<CNT> - C613<CNT> - C614<CNT> - C630<CNT>
+  1	C599<CNT> - C616<CNT> - C615<CNT> - C631<CNT>
+  1	C59<CNT> - C76<CNT> - C75<CNT> - C91<CNT>
+  1	C5<CNT> - C20<CNT> - C21<CNT> - C37<CNT>
+  1	C5<CNT> - C22<CNT> - C6<CNT> - O3<CNT>
+  1	C600<CNT> - C615<CNT> - C616<CNT> - C632<CNT>
+  1	C601<CNT> - C618<CNT> - C617<CNT> - C633<CNT>
+  1	C602<CNT> - C617<CNT> - C618<CNT> - C634<CNT>
+  1	C603<CNT> - C620<CNT> - C619<CNT> - C635<CNT>
+  1	C604<CNT> - C619<CNT> - C620<CNT> - C636<CNT>
+  1	C605<CNT> - C622<CNT> - C621<CNT> - C637<CNT>
+  1	C606<CNT> - C621<CNT> - C622<CNT> - C638<CNT>
+  1	C607<CNT> - C608<CNT> - C623<CNT> - C639<CNT>
+  1	C608<CNT> - C625<CNT> - C624<CNT> - O8<CNT>
+  1	C609<CNT> - C624<CNT> - C625<CNT> - H17<CNT>
+  1	C60<CNT> - C75<CNT> - C76<CNT> - C92<CNT>
+  1	C610<CNT> - C627<CNT> - C626<CNT> - O9<CNT>
+  1	C611<CNT> - C626<CNT> - C627<CNT> - H19<CNT>
+  1	C612<CNT> - C629<CNT> - C628<CNT> - O10<CNT>
+  1	C613<CNT> - C628<CNT> - C629<CNT> - H21<CNT>
+  1	C614<CNT> - C631<CNT> - C630<CNT> - O11<CNT>
+  1	C615<CNT> - C630<CNT> - C631<CNT> - H23<CNT>
+  1	C616<CNT> - C633<CNT> - C632<CNT> - O12<CNT>
+  1	C617<CNT> - C632<CNT> - C633<CNT> - H25<CNT>
+  1	C618<CNT> - C635<CNT> - C634<CNT> - O13<CNT>
+  1	C619<CNT> - C634<CNT> - C635<CNT> - H27<CNT>
+  1	C61<CNT> - C78<CNT> - C77<CNT> - C93<CNT>
+  1	C620<CNT> - C637<CNT> - C636<CNT> - O14<CNT>
+  1	C621<CNT> - C636<CNT> - C637<CNT> - H29<CNT>
+  1	C622<CNT> - C639<CNT> - C638<CNT> - O15<CNT>
+  1	C623<CNT> - C638<CNT> - C639<CNT> - H31<CNT>
+  1	C62<CNT> - C77<CNT> - C78<CNT> - C94<CNT>
+  1	C63<CNT> - C64<CNT> - C79<CNT> - C95<CNT>
+  1	C64<CNT> - C81<CNT> - C80<CNT> - C96<CNT>
+  1	C65<CNT> - C80<CNT> - C81<CNT> - C97<CNT>
+  1	C66<CNT> - C83<CNT> - C82<CNT> - C98<CNT>
+  1	C67<CNT> - C82<CNT> - C83<CNT> - C99<CNT>
+  1	C68<CNT> - C85<CNT> - C84<CNT> - C100<CNT>
+  1	C69<CNT> - C84<CNT> - C85<CNT> - C101<CNT>
+  1	C6<CNT> - C21<CNT> - C5<CNT> - H5<CNT>
+  1	C6<CNT> - C23<CNT> - C22<CNT> - C38<CNT>
+  1	C70<CNT> - C87<CNT> - C86<CNT> - C102<CNT>
+  1	C71<CNT> - C86<CNT> - C87<CNT> - C103<CNT>
+  1	C72<CNT> - C89<CNT> - C88<CNT> - C104<CNT>
+  1	C73<CNT> - C88<CNT> - C89<CNT> - C105<CNT>
+  1	C74<CNT> - C91<CNT> - C90<CNT> - C106<CNT>
+  1	C75<CNT> - C90<CNT> - C91<CNT> - C107<CNT>
+  1	C76<CNT> - C93<CNT> - C92<CNT> - C108<CNT>
+  1	C77<CNT> - C92<CNT> - C93<CNT> - C109<CNT>
+  1	C78<CNT> - C95<CNT> - C94<CNT> - C110<CNT>
+  1	C79<CNT> - C94<CNT> - C95<CNT> - C111<CNT>
+  1	C7<CNT> - C22<CNT> - C23<CNT> - C39<CNT>
+  1	C7<CNT> - C24<CNT> - C8<CNT> - O4<CNT>
+  1	C80<CNT> - C111<CNT> - C96<CNT> - C112<CNT>
+  1	C81<CNT> - C98<CNT> - C97<CNT> - C113<CNT>
+  1	C82<CNT> - C97<CNT> - C98<CNT> - C114<CNT>
+  1	C83<CNT> - C100<CNT> - C99<CNT> - C115<CNT>
+  1	C84<CNT> - C99<CNT> - C100<CNT> - C116<CNT>
+  1	C85<CNT> - C102<CNT> - C101<CNT> - C117<CNT>
+  1	C86<CNT> - C101<CNT> - C102<CNT> - C118<CNT>
+  1	C87<CNT> - C104<CNT> - C103<CNT> - C119<CNT>
+  1	C88<CNT> - C103<CNT> - C104<CNT> - C120<CNT>
+  1	C89<CNT> - C106<CNT> - C105<CNT> - C121<CNT>
+  1	C8<CNT> - C23<CNT> - C7<CNT> - H7<CNT>
+  1	C8<CNT> - C25<CNT> - C24<CNT> - C40<CNT>
+  1	C90<CNT> - C105<CNT> - C106<CNT> - C122<CNT>
+  1	C91<CNT> - C108<CNT> - C107<CNT> - C123<CNT>
+  1	C92<CNT> - C107<CNT> - C108<CNT> - C124<CNT>
+  1	C93<CNT> - C110<CNT> - C109<CNT> - C125<CNT>
+  1	C94<CNT> - C109<CNT> - C110<CNT> - C126<CNT>
+  1	C95<CNT> - C96<CNT> - C111<CNT> - C127<CNT>
+  1	C96<CNT> - C113<CNT> - C112<CNT> - C128<CNT>
+  1	C97<CNT> - C112<CNT> - C113<CNT> - C129<CNT>
+  1	C98<CNT> - C115<CNT> - C114<CNT> - C130<CNT>
+  1	C99<CNT> - C114<CNT> - C115<CNT> - C131<CNT>
+  1	C9<CNT> - C24<CNT> - C25<CNT> - C41<CNT>
+  1	C9<CNT> - C26<CNT> - C10<CNT> - O5<CNT>
+  1	C<CNT> - C17<CNT> - C16<CNT> - C32<CNT>
+  1	C<CNT> - C31<CNT> - C15<CNT> - H15<CNT>
+ total 640 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CNT	1
+  )
+ (no restraints)
+> saveoff CNT CNT_arm_oh-08-45_AC.lib
+ Creating CNT_arm_oh-08-45_AC.lib
+Saving CNT.
+Building topology.
+Building atom parameters.
+> quit
+	Quit

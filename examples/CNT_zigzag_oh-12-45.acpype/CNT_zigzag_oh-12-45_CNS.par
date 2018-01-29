@@ -1,0 +1,36 @@
+Remarks CNT_zigzag_oh-12-45_CNS.par created by acpype (Rev: 7828) on Sat Mar  5 10:22:56 2016
+
+set echo=false end
+
+{ Bonds: atomType1 atomType2 kb r0 }
+BOND   ca_   ha_    344.3   1.0870
+BOND   oh_   ho_    369.6   0.9740
+BOND   ca_   ca_    478.4   1.3870
+BOND   ca_   oh_    386.1   1.3620
+
+{ Angles: aType1 aType2 aType3 kt t0 }
+ANGLe   ca_   oh_   ho_     48.9   109.47
+ANGLe   ca_   ca_   ha_     48.5   120.01
+ANGLe   ca_   ca_   ca_     67.2   119.97
+ANGLe   ca_   ca_   oh_     69.8   119.94
+
+{ Proper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+DIHEdral   ca_   ca_   oh_   ho_           0.900    2   180.00
+DIHEdral   ca_   ca_   ca_   oh_           3.625    2   180.00
+DIHEdral   oh_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   ca_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   ca_   ca_   ca_   ca_           3.625    2   180.00
+
+{ Improper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+IMPRoper   ca_   ca_   ca_   ca_           1.1    2   180.00
+IMPRoper   oh_   ca_   ca_   ca_           1.1    2   180.00
+IMPRoper   ca_   ca_   ca_   ha_           1.1    2   180.00
+IMPRoper   ca_   ca_   ca_   oh_           1.1    2   180.00
+
+{ Nonbonded: Type Emin sigma; (1-4): Emin/2 sigma }
+NONBonded   ca_    0.086000    3.399670    0.043000    3.399670
+NONBonded   oh_    0.210400    3.066473    0.105200    3.066473
+NONBonded   ho_    0.000000    0.000000    0.000000    0.000000
+NONBonded   ha_    0.015000    2.599642    0.007500    2.599642
+
+set echo=true end

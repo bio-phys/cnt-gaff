@@ -1,0 +1,50 @@
+Remarks CNT_arm_cooh-08-45_CNS.par created by acpype (Rev: 7828) on Sat Mar  5 03:18:24 2016
+
+set echo=false end
+
+{ Bonds: atomType1 atomType2 kb r0 }
+BOND   ca_   ha_    344.3   1.0870
+BOND   oh_   ho_    369.6   0.9740
+BOND   ca_   ca_    478.4   1.3870
+BOND   ca_    c_    349.7   1.4870
+BOND    c_    o_    648.0   1.2140
+BOND    c_   oh_    466.4   1.3060
+
+{ Angles: aType1 aType2 aType3 kt t0 }
+ANGLe   ca_   ca_   ha_     48.5   120.01
+ANGLe    c_   oh_   ho_     51.2   107.37
+ANGLe   ca_   ca_   ca_     67.2   119.97
+ANGLe   ca_    c_    o_     68.7   123.44
+ANGLe   ca_    c_   oh_     70.1   113.44
+ANGLe   ca_   ca_    c_     64.6   120.14
+ANGLe    o_    c_   oh_     77.4   122.88
+
+{ Proper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+DIHEdral   ca_   ca_    c_   oh_           1.000    2   180.00
+DIHEdral    c_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   ha_   ca_   ca_    c_           3.625    2   180.00
+DIHEdral   ca_   ca_    c_    o_           1.000    2   180.00
+DIHEdral   ca_    c_   oh_   ho_           2.300    2   180.00
+DIHEdral   ca_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   ca_   ca_   ca_    c_           3.625    2   180.00
+DIHEdral    o_    c_   oh_   ho_  MULT 2   1.900    1     0.00
+                                           2.300    2   180.00
+DIHEdral    c_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   ca_   ca_   ca_   ha_           3.625    2   180.00
+
+{ Improper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+IMPRoper   ca_   ca_   ca_   ca_           1.1    2   180.00
+IMPRoper    c_   ca_   ca_   ca_           1.1    2   180.00
+IMPRoper   ca_   ca_   ca_    c_           1.1    2   180.00
+IMPRoper   ca_   ca_   ca_   ha_           1.1    2   180.00
+IMPRoper   ca_    o_    c_   oh_          10.5    2   180.00
+
+{ Nonbonded: Type Emin sigma; (1-4): Emin/2 sigma }
+NONBonded   ca_    0.086000    3.399670    0.043000    3.399670
+NONBonded    c_    0.086000    3.399670    0.043000    3.399670
+NONBonded    o_    0.210000    2.959922    0.105000    2.959922
+NONBonded   oh_    0.210400    3.066473    0.105200    3.066473
+NONBonded   ho_    0.000000    0.000000    0.000000    0.000000
+NONBonded   ha_    0.015000    2.599642    0.007500    2.599642
+
+set echo=true end
