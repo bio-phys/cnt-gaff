@@ -1,4 +1,3 @@
-#--------------------------
 #  This project contains: 
 
  - buildCstruct 1.2 (Andrea Minoia, Martin Voegele) 
@@ -17,7 +16,6 @@ Invoke both of the above to generate some example CNTs with various functional g
  - a folder with ready-to-use example CNTs.
 
 
-#-----------------
 #  Requirements: 
 
  - Python 2.7 and Numpy
@@ -29,7 +27,6 @@ Invoke both of the above to generate some example CNTs with various functional g
  - OpenBabel (optional, but strongly recommended)
 
 
-#---------------
 #  Literature:
 
  - M. Vögele, J. Köfinger, G. Hummer: 
