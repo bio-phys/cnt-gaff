@@ -1,19 +1,19 @@
 #  This project contains: 
 
- - buildCstruct 1.2 (Andrea Minoia, Martin Voegele) 
+ - **buildCstruct 1.2** (Andrea Minoia, Martin Voegele)
 Generates atomistic structures of carbon nanotubes (CNTs) or graphite.
 Can add three different functional groups to the rim (OH, COOH, COO-) of a CNT. 
 Partial charges, if desired, are parameterized for use with the Amber force field. 
 See also http://chembytes.wikidot.com/buildcstruct.
 License: Free to use, modify and distribute
 
- - acpype.py (Alan Wilter Sousa da Silva)
+ - **acpype.py** (Alan Wilter Sousa da Silva)
 Assigns generalized Amber (GAFF) parameters to organic molecules.
 This is included only for convenience and was taken unchanged as provided. 
 See also http://www.ccpn.ac.uk/v2-software/software/ACPYPE-folder. 
 License: GNU General Public License V3.
 
- - two bash scripts (Martin Voegele) and a folder with ready-to-use example CNTs:
+ - **Two example bash scripts** (Martin Voegele) and a folder with ready-to-use example CNTs:
 The scripts invoke buildCstruct and acpype to generate some example CNTs with various functional groups at the rim. 
 License: Free to use, modify and distribute
 
@@ -29,7 +29,7 @@ License: Free to use, modify and distribute
  - OpenBabel (optional, but strongly recommended)
 
  
-# Get Started
+# Get Started:
 
 To build your CNT, invoke buildCstruct
 
