@@ -28,7 +28,12 @@ License: Free to use, modify and distribute
 
  - OpenBabel (optional, but strongly recommended)
 
- 
+
+# Installation
+
+If all requirements are fulfilled (see above), no installation is required. 
+
+
 # Get Started:
 
 To build your CNT, invoke buildCstruct
