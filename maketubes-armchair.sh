@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#TODO: Add documentation
+
 for N in 08 ; do
 	for LENGTH in 40 45 50; do
 		for FUNC in none oh cooh coo; do
