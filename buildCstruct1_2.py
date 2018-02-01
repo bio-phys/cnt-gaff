@@ -70,34 +70,30 @@ Known issues and limitations:
 
 Changelog:
 
-    + v 1.2 - January 2018:
+    + v 1.2 - January 2018 (Martin Voegele):
     	- Modified H adding, so there are no clashes between hydrogens.
     	- Added support for mol2 format
         - Added partial charges
         - Added COOH, COO- and OH groups for CNTs (ooption -f)
 
-    + v 1.1 - March 2010:
+    + v 1.1 - March 2010 (Andrea Minoia):
         - improved connectivity search algorithm 
         - added support for XYZ format
         - added support for gromacs GRO format
         
-    + v 1.0 - April 2009:
+    + v 1.0 - April 2009 (Andrea Minoia):
         - first release of buildCstruct
-
-
 
 
 License:
     Freeware. You can use, modify and redistribute the source.
       
-    buildCstruct is part of Yasc, a collection of freeware software, therefore it
-    cames with _ABSOLUTE_ _NO_(as in NOTHING, NADA, NICHTS, NIENTE, RIEN) WARRANTY.
-    The authors of the scripts collected in Yasc are _NOT_ responsible if these software
-    will erase your hard disks, empty your bank account, stole your car, seduce
-    your wife, shave your dog or make any kind of mess and damages, including loss
-    of data or worst. By using Yasc, you _ACCEPT_ these terms.
-    Once again: use at your own risk!
-
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+    FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+    COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 Contacts:
     You liked this program? You have suggestions?
