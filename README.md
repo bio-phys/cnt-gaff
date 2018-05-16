@@ -53,7 +53,8 @@ Both steps are scripted for various CNT geometries in
 
  - M. Vögele, J. Köfinger, G. Hummer: 
    Simulations of Carbon Nanotube Porins in Lipid Bilayers.
-   Faraday Discussions (in preparation, February 2018)
+   Faraday Discuss., 2018, Accepted Manuscript, DOI: 10.1039/C8FD00011E  
+   http://pubs.rsc.org/en/content/articlelanding/2018/fd/c8fd00011e
 
 (buildCstruct)
  - A. Minoia, L. Chen, D. Beljonne, L. Lazzaroni:
