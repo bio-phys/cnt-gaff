@@ -17,6 +17,8 @@ License: GNU General Public License V3.
 The scripts invoke buildCstruct and acpype to generate some example CNTs with various functional groups at the rim. 
 License: Free to use, modify and distribute
 
+ - **An example simulation set-up** without trajectories. This is only to document the set-up process of the simulations and was not tested on any other but MPIBP in-house clusters.
+
 
 #  Requirements: 
 
