@@ -1,0 +1,88 @@
+## man qsub !
+### join stdout and stderr
+#$ -j y
+### change to currend work dir
+#$ -cwd
+### send mail to
+#$ -M martin.voegele@biophys.mpg.de
+### send no email
+#$ -m n
+### request the parallel environment with 20 physical cores == 1 nodes
+#$ -pe impi_hydra 240
+### request 2 hours (==7200s) wallclock
+#$ -l h_rt=48:00:00
+### wait for another job
+#$ -hold_jid 4
+### do not use GPUs
+#$ -l use_gpus=0
+
+
+
+## MODULES ##
+
+# load the impi module (-> mandatory)
+module load impi/4.1.3
+module load amber/14
+module load amberTools/14
+module load vmd/1.9.1
+#module load cuda
+
+
+## SIMULATION ##
+
+
+# Directory
+mkdir simulation
+cd simulation
+
+
+# Get necessary files
+cp ../input/*.prmtop .
+cp ../input/*.inpcrd .
+cp ../parameters/*.in .
+
+
+# Energy Minimization
+mpiexec -perhost 24 -n 240 pmemd.MPI -O -i 01_Min.in -o 01_Min.out -p system.prmtop -c system.inpcrd -r 01_Min.rst -inf 01_Min.mdinfo -l 01_Min.log
+#ambpdb -p system.prmtop < 01_Min.rst > 01_Min.pdb
+
+
+# Heating through two sequential runs
+mpiexec -perhost 24 -n 240 pmemd.MPI -O -i 02_Heat.in -o 02_Heat.out -p system.prmtop -c 01_Min.rst -r 02_Heat.rst -ref 01_Min.rst -x 02_Heat.nc -inf 02_Heat.mdinfo -l 02_Heat.log 
+mpiexec -perhost 24 -n 240 pmemd.MPI -O -i 03_Heat2.in -o 03_Heat2.out -p system.prmtop -c 02_Heat.rst -r 03_Heat.rst -ref 02_Heat.rst -x 03_Heat.nc -inf 03_Heat.mdinfo -l 03_Heat.log
+
+
+# Hold
+# equilibrate the system's periodic boundary condition dimension
+mpiexec -perhost 24 -n 240 pmemd.MPI -O -i 04_Hold.in -o 04_Hold_1.out -p system.prmtop -c 03_Heat.rst -r 04_Hold_1.rst -x 04_Hold_1.nc -inf 04_Hold_1.mdinfo -l 04_Hold_1.log
+mpiexec -perhost 24 -n 240 pmemd.MPI -O -i 04_Hold.in -o 04_Hold_2.out -p system.prmtop -c 04_Hold_1.rst -r 04_Hold_2.rst -x 04_Hold_2.nc -inf 04_Hold_2.mdinfo -l 04_Hold_2.log
+mpiexec -perhost 24 -n 240 pmemd.MPI -O -i 04_Hold.in -o 04_Hold_3.out -p system.prmtop -c 04_Hold_2.rst -r 04_Hold_3.rst -x 04_Hold_3.nc -inf 04_Hold_3.mdinfo -l 04_Hold_3.log
+mpiexec -perhost 24 -n 240 pmemd.MPI -O -i 04_Hold.in -o 04_Hold_4.out -p system.prmtop -c 04_Hold_3.rst -r 04_Hold_4.rst -x 04_Hold_4.nc -inf 04_Hold_4.mdinfo -l 04_Hold_4.log
+mpiexec -perhost 24 -n 240 pmemd.MPI -O -i 04_Hold.in -o 04_Hold_5.out -p system.prmtop -c 04_Hold_4.rst -r 04_Hold_5.rst -x 04_Hold_5.nc -inf 04_Hold_5.mdinfo -l 04_Hold_5.log
+mpiexec -perhost 24 -n 240 pmemd.MPI -O -i 04_Hold.in -o 04_Hold_6.out -p system.prmtop -c 04_Hold_5.rst -r 04_Hold_6.rst -x 04_Hold_6.nc -inf 04_Hold_6.mdinfo -l 04_Hold_6.log
+mpiexec -perhost 24 -n 240 pmemd.MPI -O -i 04_Hold.in -o 04_Hold_7.out -p system.prmtop -c 04_Hold_6.rst -r 04_Hold_7.rst -x 04_Hold_7.nc -inf 04_Hold_7.mdinfo -l 04_Hold_7.log
+mpiexec -perhost 24 -n 240 pmemd.MPI -O -i 04_Hold.in -o 04_Hold_8.out -p system.prmtop -c 04_Hold_7.rst -r 04_Hold_8.rst -x 04_Hold_8.nc -inf 04_Hold_8.mdinfo -l 04_Hold_8.log
+mpiexec -perhost 24 -n 240 pmemd.MPI -O -i 04_Hold.in -o 04_Hold_9.out -p system.prmtop -c 04_Hold_8.rst -r 04_Hold_9.rst -x 04_Hold_9.nc -inf 04_Hold_9.mdinfo -l 04_Hold_9.log
+mpiexec -perhost 24 -n 240 pmemd.MPI -O -i 04_Hold.in -o 04_Hold_10.out -p system.prmtop -c 04_Hold_9.rst -r 04_Hold_10.rst -x 04_Hold_10.nc -inf 04_Hold_10.mdinfo -l 04_Hold_10.log
+
+
+# Production
+mpiexec -perhost 24 -n 240 pmemd.MPI -O -i 05_Prod.in -o 05_Prod.out -p system.prmtop -c 04_Hold_10.rst -r 05_Prod.rst -x 05_Prod.nc -inf 05_Prod.mdinfo -l 05_Prod.log
+
+
+cd ..
+
+
+
+# Directory for analysis
+#mkdir analysis
+#cd analysis
+
+# Analysis
+#mpiexec -perhost 1 -n 1 process_mdout.perl ../simulation/05_Prod.out
+
+#cd ..
+
+
+exit 0
+

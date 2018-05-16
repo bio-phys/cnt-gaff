@@ -1,0 +1,41 @@
+* TOPOLOGY AND PARAMETERS FOR A BIG-SPHERE (POL)
+*
+
+!if you rtf does not have the following mass, you have to add it
+!MASS 250    POLO 30.97400   ! Fake lipid sphere
+
+read rtf card append
+* rtf for POL
+*
+31  1
+
+MASS -1    POLO 30.97400   ! Fake lipid sphere
+MASS -1    POL2 30.97400   ! Fake lipid sphere for cardiolipin
+
+RESI POL            0.00 ! for fake lipid cross-section 
+GROUP
+ATOM POLO  POLO     0.00
+PATCHING FIRST NONE LAST NONE
+
+RESI POL2           0.00 ! for fake lipid cross-section 
+GROUP
+ATOM POL2  POL2     0.00
+PATCHING FIRST NONE LAST NONE
+
+END
+
+read para card append flex
+* para for POL
+*
+
+ATOM
+MASS -1    POLO 30.97400   ! Fake lipid sphere
+MASS -1    POL2 30.97400   ! Fake lipid sphere for cardiolipin
+
+NONBONDED nbxmod  5 atom cdiel shift vatom vdistance vswitch -
+cutnb 14.0 ctofnb 12.0 ctonnb 10.0 eps 1.0 e14fac 1.0 wmin 1.5 
+
+POLO     0.0440    -0.5000    5.400 ! to approximate the polar head
+POL2     0.0440    -0.5000    7.640 ! Fake lipid sphere for cardiolipin
+
+END

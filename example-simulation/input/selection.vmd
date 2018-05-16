@@ -1,0 +1,4 @@
+mol new all.pdb
+set sel [atomselect top "resname CNT or not same residue as (within 2.0 of resname CNT)"]
+$sel writepdb selected.pdb
+exit
