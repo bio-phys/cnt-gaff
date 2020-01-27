@@ -26,7 +26,7 @@ License: Free to use, modify and distribute
 
 (for acpype.py:) 
 
- - Antechamber (from AmberTools preferably)
+ - Antechamber (from AmberTools preferably) version 15(!)
 
  - OpenBabel (optional, but strongly recommended)
 
